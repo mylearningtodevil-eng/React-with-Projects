@@ -1,0 +1,21 @@
+import React from 'react'
+import { Link, useLoaderData } from 'react-router-dom'
+  function Jobs() {
+  const jobsData = useLoaderData();
+  return (
+    <div className='jobs'>
+      {jobsData.map((job)=>{
+        return <Link key={job.title}>
+        <h4>{job.title}</h4>
+        <p>{job.location}</p>
+        </Link>
+      })}
+    </div>
+  )
+}
+
+export default Jobs
+export const JobLoader = async () => {
+  const res = await fetch("http://localhost:5000/Jobs");
+  return res.json();
+}
