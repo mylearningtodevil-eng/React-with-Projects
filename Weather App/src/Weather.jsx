@@ -12,7 +12,7 @@ function Weather() {
             return;
         }
         try{
-            const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=48847bca5fc423679a8d859eded340c2`
+            const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=`
             const response = await fetch(url);
             const data = await response.json();
             setWeatherData({
@@ -59,5 +59,6 @@ function Weather() {
     </div>
   )
 }
+
 
 export default Weather
